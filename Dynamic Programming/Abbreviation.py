@@ -34,29 +34,3 @@ def abbreviation(a, b):
     return "YES" if dp[n][m] else "NO"
 
 print(abbreviation("daBcd", "ABC"))
-
-def abbreviation(a, b):
-    n, m = len(a), len(b)
-    dp = [[False] * (m + 1) for _ in range(n + 1)]
-    dp[0][0]= True
-
-    for i in range(1, n + 1):
-        if a[i-1].lower():
-            dp[i][0] = dp[i-1][0]
-        else:
-            dp[i][0] = False
-
-    for i in range(1, n + 1):
-        for j in range(1, m + 1):
-            charA = a[i-1]
-            charB = b[j-1]
-
-            if charA.upper() == charB:
-                dp[i][j] = dp[i-1][j-1]
-
-            if charA.islower():
-                dp[i][j] = dp[i][j] or dp[i-1][j]
-    
-    return "YES" if dp[n][m] else "NO"
-
-print(abbreviation("daBcd", "ABC"))
