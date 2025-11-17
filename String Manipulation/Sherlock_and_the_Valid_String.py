@@ -17,7 +17,7 @@ class Solution:
             low = min(f1, f2)
 
             # Case 2a: one char occurs once (freq=1) — remove it → valid
-            if freq_count[1] == 1 and low == 1:
+            if freq_count[1] == 1:
                 return "YES"
 
             # Case 2b: one char has higher frequency by exactly 1, and only one such char

@@ -17,11 +17,10 @@ class Solution:
             elif op == 2:
                 old = freq[val]
                 if old > 0:
-                    freqCount[old] -= 1
                     new = old - 1
                     freq[val] = new
-                    if new > 0:
-                        freqCount[new] += 1
+                    freqCount[old] -= 1
+                    freqCount[new] += 1
 
             elif op == 3:
                 result.append(1 if freqCount[val] > 0 else 0)
