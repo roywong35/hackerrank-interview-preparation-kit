@@ -1,5 +1,5 @@
 def triplets(a, b, c):
-    count, pa, pc = 0, 0, 0
+    count = 0
     a = sorted(set(a))
     b = sorted(set(b))
     c = sorted(set(c))
